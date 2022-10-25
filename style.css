@@ -1,0 +1,717 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Segoe UI Semibold";
+  src: url("/font/segoe-ui-semibold-2.ttf") format("truetype");
+}
+@font-face {
+  font-family: Mongolian Baiti;
+  src: url("/font/monbaiti.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Leelawadee UI";
+  src: url("/font/LeelawUI.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Segoe UI";
+  src: url("/font/Segoe UI.ttf") format("truetype");
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 670px) {
+  #menu {
+    display: none;
+  }
+  .photoBG {
+    padding-top: 25px;
+  }
+  .introduction p {
+    padding-top: 30px;
+    padding-left: 25px;
+    z-index: 1;
+  }
+}
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 150px;
+    width: 150px;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    height: 150px;
+    width: 150px;
+  }
+}
+@-webkit-keyframes appearWHOAMI {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 110%;
+    height: auto;
+  }
+}
+@keyframes appearWHOAMI {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 110%;
+    height: auto;
+  }
+}
+body {
+  background-color: #F6F2EF;
+  -webkit-perspective: 1000;
+  overflow-x: hidden;
+}
+
+.titre h1 {
+  color: #595959;
+  font-family: "Mongolian Baiti";
+  font-size: 5em;
+  padding-left: 3vw;
+  text-align: center;
+}
+.titre h2 {
+  color: #9D3625;
+  font-family: "Leelawadee UI";
+  padding-left: 8vw;
+  text-align: center;
+}
+
+p {
+  font-family: "Segoe UI true", Tahoma, Geneva, Verdana, sans-serif;
+  color: #182E55;
+  font-weight: 200;
+}
+
+.mainPage {
+  display: grid;
+  width: 100%;
+  height: 100vh;
+  grid-template-columns: repeat(auto, 2);
+  grid-template-rows: 10% 35% 55%;
+  -moz-column-gap: 10vw;
+       column-gap: 10vw;
+}
+.mainPage .introduction {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.mainPage .introduction p {
+  width: 80%;
+  line-height: 25px;
+  margin: auto;
+  position: relative;
+  font-size: 1.2em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mainPage .introduction p::before {
+  content: "";
+  position: absolute;
+  background-color: #CE8174;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  z-index: -1;
+  top: -70px;
+  left: -50px;
+}
+.mainPage .introduction div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.mainPage .introduction div a img {
+  width: 40px;
+}
+.mainPage header {
+  grid-column: span 2;
+}
+.mainPage header .dif ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  margin-right: 10vw;
+  margin-top: 2vh;
+  gap: 5vw;
+}
+.mainPage header .dif ul li a {
+  text-decoration: none;
+  color: #182E55;
+  font-family: "Segoe UI Semibold", Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.1);
+}
+.mainPage header .dif ul li a::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: #CE8174;
+  transform: scale(0);
+  transition: transform 0.2s ease-in-out;
+}
+.mainPage header .dif ul li a:hover::after {
+  transform: scale(1);
+}
+
+.photoBG {
+  justify-content: center;
+  position: relative;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.photoBG img {
+  width: 50%;
+  min-width: 300px;
+  border-radius: 25px;
+  position: relative;
+  display: block;
+}
+.photoBG::after {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: #85A2B8;
+  width: 0px;
+  height: 0px;
+  border-radius: 100%;
+  z-index: -1;
+  bottom: -80px;
+  right: 16vw;
+  -webkit-animation: appear 3s;
+          animation: appear 3s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@media screen and (max-width: 670px) {
+  .photoBG::after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: #85A2B8;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    z-index: -1;
+    bottom: -20px;
+    right: 5vw;
+  }
+  .photoBG > img {
+    height: 90%;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 670px) and (max-width: 1200px) {
+  .title h2 {
+    font-size: 0.7em;
+  }
+}
+@media screen and (max-width: 670px) {
+  .dif {
+    display: none;
+  }
+}
+@media screen and (max-width: 670px) {
+  .mainPage {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 670px) {
+  header {
+    order: 1;
+  }
+  header #menu {
+    z-index: 2;
+    position: fixed;
+  }
+  header #menu #menu-bar {
+    width: 45px;
+    height: 40px;
+    margin: 30px 0 20px 20px;
+    cursor: pointer;
+  }
+  header #menu .bar {
+    height: 5px;
+    width: 100%;
+    background-color: #182E55;
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+  header #menu #bar1 {
+    transform: translateY(-4px);
+  }
+  header #menu #bar3 {
+    transform: translateY(4px);
+  }
+  header #menu .nav {
+    transition: 0.3s ease;
+    display: none;
+  }
+  header #menu .nav ul {
+    padding: 0 22px;
+  }
+  header #menu .nav li {
+    list-style: none;
+    padding: 12px 0;
+  }
+  header #menu .nav li a {
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 3px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  header #menu .nav li a:hover {
+    letter-spacing: 3px;
+    transition: all 0.3s ease 0s;
+  }
+  header #menu .menu-bg, header #menu #menu {
+    top: 0px;
+    left: 0;
+    position: absolute;
+  }
+  header #menu .menu-bg {
+    z-index: -1;
+    width: 0;
+    height: 0;
+    margin: 30px 0 20px 20px;
+    background: #85A2B8;
+    border-radius: 50%;
+    transition: 0.3s ease;
+  }
+  header #menu .change {
+    display: block;
+  }
+  header #menu .change .bar {
+    background-color: #182E55;
+  }
+  header #menu .change #bar1 {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+  header #menu .change #bar2 {
+    opacity: 0;
+  }
+  header #menu .change #bar3 {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+  header #menu .change-bg {
+    width: 520px;
+    height: 460px;
+    transform: translate(-60%, -30%);
+  }
+}
+@media screen and (max-width: 670px) {
+  h1, h2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 670px) {
+  .titre {
+    order: 2;
+  }
+}
+@media screen and (max-width: 670px) {
+  h1 {
+    margin-top: 50px;
+  }
+}
+@media screen and (max-width: 670px) {
+  .introduction {
+    order: 4;
+  }
+  .introduction p {
+    padding-top: 30px;
+    order: 3;
+  }
+}
+@media screen and (max-width: 670px) {
+  .photoBG {
+    text-align: center;
+    order: 3;
+    margin-top: 20px;
+  }
+}
+.blur {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+@-webkit-keyframes scrollDown {
+  0% {
+    transform: translateY(-30px);
+    transition: all 1.5s ease-in 0s;
+  }
+  50% {
+    transform: translateY(30px);
+    transition: all 1.5s ease-in 0s;
+  }
+  100% {
+    transform: translateY(-30px);
+    transition: all 1.5s ease-in 0s;
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-30px);
+    transition: all 1.5s ease-in 0s;
+  }
+  50% {
+    transform: translateY(30px);
+    transition: all 1.5s ease-in 0s;
+  }
+  100% {
+    transform: translateY(-30px);
+    transition: all 1.5s ease-in 0s;
+  }
+}
+.scrollDown {
+  position: absolute;
+  left: 48.5%;
+  top: 90vh;
+  -webkit-animation-name: scrollDown;
+          animation-name: scrollDown;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+.scrollDown img {
+  width: 2.3em;
+}
+
+.whoAmI {
+  margin-top: 130px;
+}
+.whoAmI h2 {
+  text-align: center;
+  color: #75840F;
+  font-family: "Mongolian Baiti";
+  font-size: 2em;
+}
+.whoAmI h2::after {
+  content: " ";
+  display: block;
+  background-color: #85A2B8;
+  width: 100px;
+  height: 15px;
+  position: relative;
+  top: 3vh;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.flexPresentation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.flexPresentation div:nth-child(1) {
+  position: relative;
+  left: -14vw;
+}
+.flexPresentation div:nth-child(1) img {
+  width: 110%;
+  height: auto;
+  border-top-right-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-bottom-left-radius: 100%;
+  border-top-left-radius: 100%;
+}
+.flexPresentation div:nth-child(2) p {
+  align-self: center;
+  padding-right: 15vw;
+  color: #182E55;
+  width: 100%;
+  line-height: 25px;
+  margin: auto;
+  margin-top: 120px;
+  font-size: 1.2em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  .flexPresentation {
+    flex-wrap: wrap;
+  }
+  .flexPresentation div:nth-child(1) {
+    position: relative;
+    left: -6vw;
+  }
+  .flexPresentation div:nth-child(2) p {
+    color: #182E55;
+    width: 80%;
+    line-height: 25px;
+    margin: auto;
+    margin-top: 40px;
+    padding-right: 0;
+    font-size: 1.2em;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+}
+@media screen and (max-width: 670px) {
+  .whoAmI {
+    margin-top: 250px;
+  }
+}
+.semicircle {
+  position: relative;
+  background: #2c3e50;
+  height: 80vh;
+  width: 100%;
+}
+.semicircle::before {
+  position: absolute;
+  content: "";
+  left: 50%;
+  z-index: -1;
+  width: 120%;
+  height: 150px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%) translateY(-310%);
+  bottom: 0px;
+  background-color: #2c3e50;
+  transform-origin: center;
+}
+.semicircle .titleCompetences h2 {
+  text-align: center;
+  color: whitesmoke;
+  font-family: "Mongolian Baiti";
+  font-size: 2em;
+}
+.semicircle .titleCompetences h2::after {
+  content: " ";
+  display: block;
+  background-color: #CE8174;
+  width: 100px;
+  height: 15px;
+  position: relative;
+  top: 3vh;
+  margin: auto;
+  border-radius: 25px;
+}
+.semicircle .carousel {
+  margin-top: 40px;
+}
+
+.competenceScreen {
+  margin-top: 160px;
+}
+
+.carousel-inner {
+  width: 30%;
+  max-width: 300px;
+  margin: auto;
+}
+.carousel-inner .carousel-item {
+  margin-top: 20px;
+}
+.carousel-inner .carousel-item div > p {
+  color: white;
+  padding-top: 500px;
+  display: block;
+}
+
+.bloc1 {
+  padding-top: 70px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: auto;
+  -moz-column-gap: 10vw;
+       column-gap: 10vw;
+  justify-items: center;
+}
+.bloc1 div:nth-child(2) {
+  margin-top: 40px;
+  color: white;
+}
+.bloc1 div:nth-child(4), .bloc1 div:nth-child(6) {
+  margin-top: 35px;
+  color: white;
+}
+
+.barre1, .barre2, .barre3 {
+  display: block;
+  background-color: rgb(220, 217, 217);
+  width: 80%;
+  height: 25px;
+  margin: 2rem 2rem;
+  border-radius: 25px;
+}
+
+.red {
+  background-color: rgb(95, 187, 129);
+  width: 80%;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.purple {
+  background-color: rgb(194, 169, 44);
+  width: 60%;
+  height: 25px;
+  border-radius: 25px;
+  transform: translateY(1px);
+}
+
+.she {
+  background-color: rgb(143, 64, 106);
+  width: 70%;
+  height: 25px;
+  border-radius: 25px;
+  transform: translateY(2px);
+}
+
+@media screen and (max-width: 800px) {
+  .bloc1 {
+    display: block;
+  }
+  .bloc1 div:nth-child(2) {
+    margin-top: 40px;
+    transform: translateX(50px) translateY(-120px);
+    color: white;
+  }
+  .bloc1 div:nth-child(4), .bloc1 div:nth-child(6) {
+    margin-top: 35px;
+    color: white;
+    transform: translateX(50px) translateY(-115px);
+  }
+}
+.semicircle::after {
+  position: absolute;
+  content: "";
+  left: 50%;
+  z-index: -1;
+  width: 120%;
+  height: 150px;
+  border-radius: 50%;
+  background: inherit;
+  transform: translateX(-50%) translateY(50%);
+  bottom: 0px;
+  background-color: #F6F2EF;
+  transform-origin: center;
+  z-index: 2;
+}
+
+.titlePresentation {
+  z-index: 3;
+}
+.titlePresentation h2 {
+  text-align: center;
+  color: #75840F;
+  font-family: "Mongolian Baiti";
+  font-size: 2em;
+}
+.titlePresentation h2::after {
+  content: " ";
+  display: block;
+  background-color: #85A2B8;
+  width: 100px;
+  height: 15px;
+  position: relative;
+  top: 3vh;
+  margin: auto;
+  border-radius: 25px;
+}
+
+.creationScreen {
+  margin-top: 70px;
+  height: 100vh;
+  background-color: #F6F2EF;
+  display: grid;
+}
+.creationScreen .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  padding: 20px;
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+.creationScreen .card {
+  background-color: #2c3e50;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+.creationScreen .container {
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.creationScreen img {
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+.creationScreen .container:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.7;
+}
+.creationScreen .card1 > .container:after {
+  background-image: linear-gradient(135deg, #CE8174, rgb(202, 128, 128)), url(https://www.sanitec.tk/);
+}
+.creationScreen .card2 > .container:after {
+  background-image: linear-gradient(135deg, #85A2B8, rgb(145, 192, 195));
+}
+.creationScreen .card3 > .container:after {
+  background-image: linear-gradient(135deg, #ffab1d, #f8501c);
+}
+.creationScreen .details {
+  padding: 20px 10px;
+}
+.creationScreen .details > h3 > a {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 15px 0;
+  text-decoration: none;
+}
+.creationScreen .details > p {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+footer {
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */
