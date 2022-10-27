@@ -30,6 +30,7 @@ html {
   }
   .photoBG {
     padding-top: 25px;
+    height: auto;
   }
   .introduction p {
     padding-top: 30px;
@@ -79,7 +80,6 @@ html {
 }
 body {
   background-color: #F6F2EF;
-  -webkit-perspective: 1000;
   overflow-x: hidden;
 }
 
@@ -95,12 +95,14 @@ body {
   font-family: "Leelawadee UI";
   padding-left: 8vw;
   text-align: center;
+  z-index: 5;
 }
 
 p {
   font-family: "Segoe UI true", Tahoma, Geneva, Verdana, sans-serif;
   color: #182E55;
   font-weight: 200;
+  z-index: -1;
 }
 
 .mainPage {
@@ -180,9 +182,7 @@ p {
 .photoBG {
   justify-content: center;
   position: relative;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  height: auto;
 }
 .photoBG img {
   width: 50%;
@@ -190,6 +190,7 @@ p {
   border-radius: 25px;
   position: relative;
   display: block;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .photoBG::after {
   content: "";
@@ -225,24 +226,13 @@ p {
     height: 90%;
     width: 50%;
   }
-}
-@media screen and (max-width: 670px) and (max-width: 1200px) {
-  .title h2 {
-    font-size: 0.7em;
-  }
-}
-@media screen and (max-width: 670px) {
   .dif {
     display: none;
   }
-}
-@media screen and (max-width: 670px) {
   .mainPage {
     display: flex;
     flex-direction: column;
   }
-}
-@media screen and (max-width: 670px) {
   header {
     order: 1;
   }
@@ -327,23 +317,15 @@ p {
     height: 460px;
     transform: translate(-60%, -30%);
   }
-}
-@media screen and (max-width: 670px) {
   h1, h2 {
     text-align: center;
   }
-}
-@media screen and (max-width: 670px) {
   .titre {
     order: 2;
   }
-}
-@media screen and (max-width: 670px) {
   h1 {
     margin-top: 50px;
   }
-}
-@media screen and (max-width: 670px) {
   .introduction {
     order: 4;
   }
@@ -351,10 +333,8 @@ p {
     padding-top: 30px;
     order: 3;
   }
-}
-@media screen and (max-width: 670px) {
   .photoBG {
-    text-align: center;
+    margin: auto;
     order: 3;
     margin-top: 20px;
   }
@@ -364,32 +344,37 @@ p {
           backdrop-filter: blur(10px);
 }
 
+@media screen and (max-width: 1200px) {
+  .titre h2 {
+    font-size: 1.7em;
+    margin-left: 10vw;
+  }
+}
 @-webkit-keyframes scrollDown {
   0% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition: all 1.5s ease-in 0s;
   }
   50% {
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 1.5s ease-in 0s;
   }
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition: all 1.5s ease-in 0s;
   }
 }
-
 @keyframes scrollDown {
   0% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition: all 1.5s ease-in 0s;
   }
   50% {
-    transform: translateY(30px);
+    transform: translateY(20px);
     transition: all 1.5s ease-in 0s;
   }
   100% {
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     transition: all 1.5s ease-in 0s;
   }
 }
@@ -484,6 +469,10 @@ p {
 @media screen and (max-width: 670px) {
   .whoAmI {
     margin-top: 250px;
+  }
+  .titre h2 {
+    text-align: center;
+    margin-right: 12vw;
   }
 }
 .semicircle {
@@ -714,4 +703,5 @@ p {
 
 footer {
   text-align: center;
+  display: block;
 }/*# sourceMappingURL=style.css.map */
