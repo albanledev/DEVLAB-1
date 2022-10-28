@@ -404,7 +404,7 @@ p {
 }
 @media screen and (max-width: 670px) {
   .whoAmI h2 {
-    margin-top: 400px;
+    margin-top: 300px;
   }
 }
 .whoAmI h2::after {
@@ -513,7 +513,11 @@ p {
 }
 
 @media screen and (max-width: 800px) {
+  .semicircle {
+    padding-top: 30px;
+  }
   .semicircle::before {
+    display: none;
     transform: translateX(-50%) translateY(-450%);
   }
 }

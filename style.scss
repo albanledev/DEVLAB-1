@@ -572,7 +572,7 @@ p{
 
           @media screen and (max-width:670px) {
             h2{
-                margin-top: 400px;
+                margin-top: 300px;
                 
                 
             
@@ -751,7 +751,10 @@ p{
   
 @media screen and (max-width:800px) {
     .semicircle{
+
+        padding-top: 30px;
         &::before{
+            display: none;
             transform: translateX(-50%) translateY(-450%);
         }
     }
