@@ -812,7 +812,7 @@ p{
     background-color: rgb(220, 217, 217);
     width: 80%;
     height: 25px;
-    margin: 2rem 2rem;
+    margin: 2rem;
     
     // position: relative;
     // top: 3vh;
@@ -870,7 +870,6 @@ p{
     position: absolute;
     content: '';
     left: 50%;
-    z-index: -1;
     width: 120%;
     height: 150px;
     border-radius: 50%;
@@ -987,7 +986,7 @@ p{
         color: #ffffff;
         font-weight: 600;
         font-size: 18px;
-        margin: 10px 0 15px 0;
+        margin: 10px 0 15px;
         text-decoration: none;
     }
     .details>p{
