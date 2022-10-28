@@ -513,11 +513,7 @@ p {
 }
 
 @media screen and (max-width: 800px) {
-  .semicircle {
-    padding-top: 30px;
-  }
   .semicircle::before {
-    display: none;
     transform: translateX(-50%) translateY(-450%);
   }
 }
