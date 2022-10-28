@@ -402,6 +402,11 @@ p {
   font-family: "Mongolian Baiti";
   font-size: 2em;
 }
+@media screen and (max-width: 670px) {
+  .whoAmI h2 {
+    margin-top: 300px;
+  }
+}
 .whoAmI h2::after {
   content: " ";
   display: block;
@@ -467,9 +472,6 @@ p {
     text-align: center;
     margin-right: 12vw;
   }
-  .semicircle::before {
-    transform: translateX(-50%) translateY(-630px);
-  }
 }
 .semicircle {
   position: relative;
@@ -510,6 +512,11 @@ p {
   border-radius: 25px;
 }
 
+@media screen and (max-width: 800px) {
+  .semicircle::before {
+    transform: translateX(-50%) translateY(-450%);
+  }
+}
 .competenceScreen {
   margin-top: 160px;
 }

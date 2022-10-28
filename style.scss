@@ -170,14 +170,13 @@ p{
 
         
         div{
-            display: flex;
+            display:flex;
             justify-content: center;
             width: 100%;
             gap: 50px;
             margin-top: 30px;
             margin-bottom: 20px;
-            // flex-direction: row;
-            // gap: 100px;
+
 
             a  img{
                 width: 40px;
@@ -570,6 +569,16 @@ p{
         
 
           }
+
+          @media screen and (max-width:670px) {
+            h2{
+                margin-top: 300px;
+                
+                
+            
+    
+              }
+          }
         //  on met des petites barres en dessous des h2 pour bien marquer la différence entre les titres et le contenu
           h2::after{
             content: " ";
@@ -672,11 +681,6 @@ p{
             margin-right: 12vw;
         }
 
-        .semicircle{
-        &::before{
-            transform: translateX(-50%) translateY(-630px);
-        }
-    }
     }
 
 
@@ -745,6 +749,14 @@ p{
 
   }
   
+@media screen and (max-width:800px) {
+    .semicircle{
+        &::before{
+            transform: translateX(-50%) translateY(-450%);
+        }
+    }
+    
+}
 
 
   .competenceScreen{
