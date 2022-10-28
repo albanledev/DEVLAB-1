@@ -223,7 +223,7 @@ p {
     right: 5vw;
   }
   .photoBG > img {
-    height: 90%;
+    height: 95%;
     width: 50%;
   }
   .dif {
@@ -245,6 +245,7 @@ p {
     height: 40px;
     margin: 30px 0 20px 20px;
     cursor: pointer;
+    z-index: 50;
   }
   header #menu .bar {
     height: 5px;
@@ -339,11 +340,6 @@ p {
     margin-top: 20px;
   }
 }
-.blur {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
-}
-
 @media screen and (max-width: 1200px) {
   .titre h2 {
     font-size: 1.7em;
@@ -398,7 +394,7 @@ p {
 }
 
 .whoAmI {
-  margin-top: 130px;
+  margin-top: 80px;
 }
 .whoAmI h2 {
   text-align: center;
@@ -430,10 +426,7 @@ p {
 .flexPresentation div:nth-child(1) img {
   width: 110%;
   height: auto;
-  border-top-right-radius: 100%;
-  border-bottom-right-radius: 100%;
-  border-bottom-left-radius: 100%;
-  border-top-left-radius: 100%;
+  border-radius: 100%;
 }
 .flexPresentation div:nth-child(2) p {
   align-self: center;
@@ -468,11 +461,14 @@ p {
 }
 @media screen and (max-width: 670px) {
   .whoAmI {
-    margin-top: 250px;
+    margin-top: 200px;
   }
   .titre h2 {
     text-align: center;
     margin-right: 12vw;
+  }
+  .semicircle::before {
+    transform: translateX(-50%) translateY(-630px);
   }
 }
 .semicircle {
@@ -480,6 +476,7 @@ p {
   background: #2c3e50;
   height: 80vh;
   width: 100%;
+  margin: auto;
 }
 .semicircle::before {
   position: absolute;
@@ -512,26 +509,9 @@ p {
   margin: auto;
   border-radius: 25px;
 }
-.semicircle .carousel {
-  margin-top: 40px;
-}
 
 .competenceScreen {
   margin-top: 160px;
-}
-
-.carousel-inner {
-  width: 30%;
-  max-width: 300px;
-  margin: auto;
-}
-.carousel-inner .carousel-item {
-  margin-top: 20px;
-}
-.carousel-inner .carousel-item div > p {
-  color: white;
-  padding-top: 500px;
-  display: block;
 }
 
 .bloc1 {
@@ -675,7 +655,7 @@ p {
   opacity: 0.7;
 }
 .creationScreen .card1 > .container:after {
-  background-image: linear-gradient(135deg, #CE8174, rgb(202, 128, 128)), url(https://www.sanitec.tk/);
+  background-image: linear-gradient(135deg, #CE8174, rgb(202, 128, 128));
 }
 .creationScreen .card2 > .container:after {
   background-image: linear-gradient(135deg, #85A2B8, rgb(145, 192, 195));
@@ -703,4 +683,4 @@ p {
 footer {
   text-align: center;
   display: block;
-}
+}/*# sourceMappingURL=style.css.map */

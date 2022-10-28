@@ -1,4 +1,5 @@
 *{
+    // propriétés de bases classiques 
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -9,15 +10,16 @@
 @import "./font";
 
 html{
+    // permet un défilement d'écran plus souple avec les ancres
     scroll-behavior: smooth;
 }
-
+// mixin afin de gagner du temps sur les placements
 @mixin flex ($justify-content){
     display: flex;
     justify-content : $justify-content;
     
 }
-
+// media queries effacant le menu burger à partir d'une view-width, et qui permet d'espacer les éléments un peu plus
 @media screen and (min-width:670px){
     #menu{
         display: none;
@@ -43,6 +45,7 @@ html{
 
     
 }
+// animation du cercle bleu dans le main Screen car il ne fonctionnait pas avec la librairie
 
 @keyframes appear{
     0% {
@@ -57,6 +60,7 @@ html{
         
     }
 }
+// animation de l'image avec l'ambiance coworking dans le WHOAMI ca
 
 @keyframes appearWHOAMI{
     0% {
@@ -77,7 +81,7 @@ html{
 
 body{
     background-color: $body;
-    
+    // interdit à l'utilisateur de scroller vers la droite
     overflow-x: hidden;
 }
 
@@ -101,6 +105,7 @@ body{
         font-family: 'Leelawadee UI';
         padding-left: 8vw;
         text-align: center;
+        // pour être sur que le h2 soit au dessus du cercle j'augmente le z-index pour qu'il soit bien visible
         z-index: 5;
         
     }
@@ -113,7 +118,7 @@ body{
 p{
     font-family: 'Segoe UI true', Tahoma, Geneva, Verdana, sans-serif;
     color: $blue;
-    // font-size: 33px;
+    // on applique un niveau de gras
     font-weight: 200;
     z-index: -1;
 }
@@ -123,15 +128,19 @@ p{
 
 
 .mainPage{
+    // Ici on établit la zone de travail qui prend tout l'écran
     display: grid;
     width: 100%;
     height: 100vh;
+    // on fait 2 colonnes pour à gauche les titres, contenus et à droite la photo
     grid-template-columns: repeat(auto,2);
     grid-template-rows: 10% 35% 55%;
+    // j'utiliserai beaucoup les vw car super pratique pour le responsive
     column-gap: 10vw;
     
 
     .introduction{
+        // en bas à gauche
         grid-column: 1/2;
         grid-row: 3/4;
         
@@ -145,6 +154,7 @@ p{
             font-size: 1.2em;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+            // ici on définit le circle de l'intro
             &::before{
                 content: "";
                 position: absolute;
@@ -179,6 +189,7 @@ p{
     }
 
     header{
+        // on dit que le header prend toute la largeur de l'écran
         grid-column: span 2;
 
             .dif{
@@ -200,6 +211,7 @@ p{
                             font-family: 'Segoe UI Semibold', Tahoma, Geneva, Verdana, sans-serif;
                             text-shadow: 3px 2px 2px rgba(0,0,0,0.10);
                             
+                            // petite animation quand on souligne les éléments de la navbar
                             &::after {
                                 content:"";
                                 display:block;
@@ -207,6 +219,7 @@ p{
                                 width:100%;
                                 height:3px;
                                 background:$lightred;
+                                // l'effet scale 0 => 1 va permettre une animation de zoom out
                                 transform: scale(0);
                                 transition:transform 0.2s ease-in-out;
                             }
@@ -234,6 +247,7 @@ p{
         height: auto;
 
         img{
+            // on fait en sorte que l'image ne prenne pas toute la place de l'écran
             width: 50%;
             min-width: 300px;
             border-radius: 25px;
@@ -246,7 +260,7 @@ p{
         }
     
     &::after{
-        
+        // Ici c'est le blue circle qu'on définit 
         content: "";
         position: absolute;
         display: block;
@@ -271,7 +285,7 @@ p{
 
 
         .photoBG {
-        
+        // on gère le cercle bleu en responsive pour toujours garder une esthétique 
             &::after{
                 content: "";
                 position: absolute;
@@ -287,7 +301,7 @@ p{
         
         
         > img{
-            height: 90%;
+            height: 95%;
             width: 50%;
 
 
@@ -305,6 +319,7 @@ p{
 
 
         .dif{
+            // On rend inaccessible la navbar classique pour afficher celle en responsive
             display: none;
 
         }
@@ -318,16 +333,18 @@ p{
             order: 1;
             #menu {
                 z-index: 2;
+                // on rend le menu burger accessible partout sur la page
                 position: fixed;
                 
-                // display:;
+                
 
-
+                // création du burger
                 #menu-bar {
                     width: 45px;
                     height: 40px;
                     margin: 30px 0 20px 20px;
                     cursor: pointer;
+                    z-index: 50;
                    
                   }
                   
@@ -338,7 +355,10 @@ p{
                     display: block;
                     border-radius: 5px;
                     transition: 0.3s ease;
+                    
                   }
+
+
                   
                   #bar1 {
                     transform: translateY(-4px);
@@ -347,6 +367,8 @@ p{
                   #bar3 {
                     transform: translateY(4px);
                   }
+
+                //   animation apparition du menu
                   
                   .nav {
                     transition: 0.3s ease;
@@ -373,7 +395,7 @@ p{
                     text-shadow: 3px 2px 2px rgba(0,0,0,0.10);
                     
                   }
-                  
+                //   animation au survol
                   .nav li a:hover {
                     letter-spacing: 3px;
                     transition: all 0.3s ease 0s;
@@ -408,7 +430,7 @@ p{
                     background-color: #182E55;
                     
                   }
-                  
+                //   on transforme le burger au clic en croix
                   .change #bar1 {
                     transform: translateY(4px) rotateZ(-45deg);
                   }
@@ -437,12 +459,13 @@ p{
         }
 
 
-
+        // on aligne les titres pour le responsive
         h1, h2{
             text-align: center;
             
         }
 
+        // on change aussi l'ordre des éléments pour plus d'esthétique
         .titre{
             order: 2;
         }
@@ -467,11 +490,10 @@ p{
     }
 
 
-.blur{
-    backdrop-filter: blur(10px);
-}
-
 @media screen and (max-width:1200px) {
+
+    // on réduit la taille du h2 pour qu'il s'adapte au responsive
+
     .titre{
         h2{
             font-size: 1.7em;
@@ -485,6 +507,8 @@ p{
     
 
 @keyframes scrollDown{
+
+    // animation de la flèche qui va de haut en bas 
 
     0%{
         transform: translateY(-20px);
@@ -502,12 +526,6 @@ p{
         transition: all 1.5s ease-in  0s ;
     }
 
-    
-
-    // 100%{
-    //     transform: translateY(-30px);
-    //     transition: all 1.5s ease-in 0s ;
-    // }
 
 
 }
@@ -518,6 +536,8 @@ p{
     animation-name: scrollDown;
     animation-duration: 3s;
     animation-delay: 0s;
+
+    // ça signifie que l'animation ne s'arrête jamais 
     animation-iteration-count: infinite ;
     animation-fill-mode: both;
     
@@ -535,7 +555,7 @@ p{
 
     .whoAmI{
 
-        margin-top: 130px;
+        margin-top: 80px;
  
 
 
@@ -545,13 +565,12 @@ p{
             color: $vert;
             font-family: "Mongolian Baiti";
             font-size: 2em;
-            // position: relative;
             
             
         
 
           }
-
+        //  on met des petites barres en dessous des h2 pour bien marquer la différence entre les titres et le contenu
           h2::after{
             content: " ";
             display: block;
@@ -570,23 +589,17 @@ p{
     .flexPresentation{
         display: flex;
         justify-content: space-between;
-        // flex-wrap: wrap;
         margin-top: 50px;
 
         div:nth-child(1){
-
+            // c'est la 1ère div c'est-à-dire l'image
             position: relative;
             left: -14vw;
             img{
                 width: 110%;
                 height: auto;
-                border-top-right-radius: 100%;
-                border-bottom-right-radius: 100%;
-                border-bottom-left-radius: 100%;
-                border-top-left-radius: 100%;
+                border-radius: 100%;
 
-                // opacity: 0.6;
-                // animation: appearWHOAMI 3s ;
                 
 
             }
@@ -594,7 +607,7 @@ p{
         }
 
         div:nth-child(2){
-
+// ici le texte
             p{
             align-self: center;
             padding-right: 15vw;
@@ -613,6 +626,7 @@ p{
 
     @media screen and (max-width:800px) {
         .flexPresentation{
+            // on s'adapte au responsive
             flex-wrap: wrap;
 
                 div:nth-child(1){
@@ -648,7 +662,8 @@ p{
 
     @media screen and (max-width:670px) {
         .whoAmI{
-            margin-top: 250px;
+            // je laisse généralement pas mal d'espece en responsive histoire de bien aérer la page
+            margin-top: 200px;
             
         }
 
@@ -657,7 +672,11 @@ p{
             margin-right: 12vw;
         }
 
-
+        .semicircle{
+        &::before{
+            transform: translateX(-50%) translateY(-630px);
+        }
+    }
     }
 
 
@@ -673,10 +692,12 @@ p{
 
 
 .semicircle {
+    // on définit la zone bleue dans laquelle on va écrire
     position: relative;
     background: #2c3e50;
     height: 80vh;
     width: 100%;
+    margin: auto;
 
     &::before {
         position: absolute;
@@ -693,20 +714,6 @@ p{
         transform-origin: center;
       }
 
-    //   &::after {
-    //     position: absolute;
-    //     content: '';
-    //     left: 50%;
-    //     z-index: -1;
-    //     width: 120%;
-    //     height: 150px;
-    //     border-radius: 50%;
-    //     background: inherit;
-    //     transform: translateX(-50%) translateY(310%);
-    //     bottom: 0px;
-    //     background-color: white;
-    //     transform-origin: center;
-    //   }
 
       .titleCompetences{
         h2{
@@ -714,7 +721,6 @@ p{
             color: whitesmoke;
             font-family: "Mongolian Baiti";
             font-size: 2em;
-            // position: relative;
             
             
         
@@ -737,11 +743,6 @@ p{
 
       }
 
-      .carousel{
-        margin-top: 40px;
-
-
-      }
   }
   
 
@@ -752,53 +753,26 @@ p{
 
   }
 
-  .carousel-inner{
-    
-    width: 30%;
-    max-width: 300px;
-    margin: auto;
-
-    .carousel-item{
-        // width: 20%;
-        margin-top: 20px;
-
-        div > p{
-            color: white;
-
-            padding-top: 500px;
-            display: block;
-        }
-
-    }
-  }
+  
 
 .bloc1{
     padding-top: 70px;
     width: 100%;
-    
+    // ici on met à gauche les barres de progression et à droite à quoi elles équivalent
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     margin: auto;
     column-gap: 10vw;
     justify-items: center;
 
-    // justify-content: center;
-    // align-content: center;
 
     div:nth-child(2){
         margin-top: 40px;
         color: white;
-        // text-shadow: rgb(95, 187, 129) 10px 8px 7px ;
+
 
     }
 
-    // div:nth-child(4){
-        // text-shadow: rgb(194, 169, 44) 10px 8px 7px ;
-    // }
-
-    // div:nth-child(6){
-        // text-shadow: rgb(143, 64, 106) 10px 8px 7px ;
-    // }
 
     div:nth-child(4),div:nth-child(6){
         margin-top: 35px;
@@ -813,9 +787,6 @@ p{
     width: 80%;
     height: 25px;
     margin: 2rem;
-    
-    // position: relative;
-    // top: 3vh;
     border-radius: 25px;
   }
   
@@ -889,7 +860,7 @@ p{
         color: $vert;
         font-family: "Mongolian Baiti";
         font-size: 2em;
-        // position: relative;
+
         
         
     
@@ -910,17 +881,18 @@ p{
       }
 }
 
+// mes créations
 .creationScreen{
     margin-top: 70px;
-    // width: 100%;
+
     height: 100vh;
-    // z-index: 3;
+
     background-color: $body;
     display: grid;
-    // place-items: center center;
 
     .cards{
         display: grid;
+        // les cards doivent faire au minimum 400px sinon elles se chevauchent
         grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
         padding: 20px;
         grid-gap: 40px;
@@ -934,8 +906,9 @@ p{
 
     .container{
         position: relative;
+        // Les clip-paths permettent d'afficher des éléments dans de nombreuses formes géométriques différentes sans que le fichier graphique ne soit préalablement modifié 
         clip-path: polygon(0 0,100% 0, 100% 85%, 0 100%);
-        // object-fit:fill;
+
     }
     img{
         width: 100%;
@@ -952,7 +925,6 @@ p{
         left: 0;
         border-radius: 20px 20px 0 0;
         opacity: 0.7;
-        // transform: translateX(10px);
     }
     .card1>.container:after{
         background-image: linear-gradient(
@@ -961,8 +933,7 @@ p{
             rgb(202, 128, 128)
             
             
-        ),
-        url(https://www.sanitec.tk/);
+        )
         
     }
     .card2>.container:after{
