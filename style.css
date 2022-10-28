@@ -394,7 +394,7 @@ p {
 }
 
 .whoAmI {
-  margin-top: 80px;
+  margin-top: 120px;
 }
 .whoAmI h2 {
   text-align: center;
@@ -404,7 +404,7 @@ p {
 }
 @media screen and (max-width: 670px) {
   .whoAmI h2 {
-    margin-top: 300px;
+    margin-top: 470px;
   }
 }
 .whoAmI h2::after {
