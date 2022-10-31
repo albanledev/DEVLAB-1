@@ -704,6 +704,7 @@ p{
     background: #2c3e50;
     height: 80vh;
     width: 100%;
+    min-width: 450px;
     margin: auto;
 
     &::before {
@@ -997,10 +998,41 @@ footer{
 
 
 @media screen and (max-width:450px) {
+
     html{
+        width: 100vw;
+    }
+    body{
         width: 100%;
+        margin-left: 20px;
+
+    
+
+        
+        
     }
 
 
+    .semicircle{
+            margin-left: 40px;
+            transform: translateX(-60px)
+            scale(1.0,1.0);
+            
     
+        
+
+        &::before{
+            transform: translateX(-48%) translateY(-330%);
+        }
+
+        .yo{
+            width: 40px;
+            height: 522px;
+            background-color: #2c3e50;
+            position: absolute;
+            top: -9px;
+            right: -39px;
+            transform: rotate(180deg);
+        }
+    }
 }
