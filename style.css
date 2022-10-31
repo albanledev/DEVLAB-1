@@ -690,4 +690,10 @@ p {
 footer {
   text-align: center;
   display: block;
+}
+
+@media screen and (max-width: 450px) {
+  html {
+    width: 135%;
+  }
 }/*# sourceMappingURL=style.css.map */

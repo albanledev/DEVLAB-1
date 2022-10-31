@@ -682,6 +682,8 @@ p{
             margin-right: 12vw;
         }
 
+
+
     }
 
 
@@ -994,3 +996,9 @@ footer{
 }
 
 
+@media screen and (max-width:450px) {
+    html{
+        width: 135%;
+    }
+    
+}
